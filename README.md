@@ -1,129 +1,248 @@
-# Delta-Sigma ADC ASIC Repository (ISRO VLSI Team 15)
 
-[![ISRO VLSI](https://img.shields.io/badge/ISRO-VLSI-orange)](https://www.isro.gov.in/) [![SCL180nm](https://img.shields.io/badge/Tech-SCL180nm-blue)](https://www.scl.gov.in/)
+---
 
-This repository contains the **complete RTL-to-GDSII design flow** for a high-resolution **Delta-Sigma ADC ASIC** developed for **ISRO VLSI End-Term Submission** by **Team 15**. The design achieves **16-19 bit ENOB** at **0.5-2 ksps Nyquist rates** using **SCL180nm PDK**.[file:2][file:6]
+# Delta-Sigma ADC ASIC
+
+**ISRO VLSI End-Term Project – Team 15**
+
+![ISRO VLSI](https://img.shields.io/badge/ISRO-VLSI-orange)
+![Technology](https://img.shields.io/badge/Tech-SCL180nm-blue)
+
+This repository contains the **complete RTL-to-GDSII ASIC design flow** of a **high-resolution Delta-Sigma ADC**, developed as part of the **ISRO VLSI End-Term Submission** by **Team 15**.
+The design targets **16–19 bit ENOB** at **0.5–2 ksps Nyquist rates** using the **SCL 180 nm CMOS PDK**.
+
+---
 
 ## 🎯 Project Highlights
-- **3rd-order DT-CRFB Modulator** with auto-zeroing for flicker noise mitigation
-- **Cascaded Decimation Filter**: CIC (L=4, R=64) + Compensation FIR (63 taps) + Halfband FIR
-- **Full Flow**: MATLAB behavioral → Verilog RTL → Synthesis → PnR → GDSII
-- **Key Metrics**: ENOB 16.22 bits @ 0.5 ksps, Area 20,116 µm², 72% util, 0% congestion[file:2][file:5]
 
-![Project Flow](image.jpg)
-*Folder structure overview[file:8]*
+* **3rd-order DT-CRFB Delta-Sigma Modulator**
 
-![Architecture](docs/flow_diagram.png)
-*Figure 1: Complete Delta-Sigma ADC Flow (Team_15_report.pdf, p.2)[file:2]*
+  * Auto-zeroing for flicker (1/f) noise suppression
+* **Cascaded Digital Decimation Chain**
 
-## 📋 Repository Structure
+  * CIC Filter (L = 4, R = 64)
+  * Compensation FIR (63 taps)
+  * Half-Band FIR
+* **Complete End-to-End Flow**
+
+  * MATLAB behavioral → Verilog RTL → Synthesis → PnR → GDSII
+* **Key Achievements**
+
+  * ENOB: **16.22 bits @ 0.5 ksps**
+  * Core Area: **20,116 µm²**
+  * Utilization: **72%**
+  * Routing Congestion: **0%**
+
+---
+
+## 🧩 Architecture Overview
+
+### Design Flow
+
+MATLAB Behavioral Modeling
+↓
+RTL Design & Verification
+↓
+Logic Synthesis (DC)
+↓
+Floorplanning & Place-and-Route (ICC2)
+↓
+GDSII Generation
+
+### Decimation Chain
+
+512 kHz Bitstream
+→ CIC Filter (L=4, R=64) → 8 kHz
+→ Compensation FIR (63 taps) → 4 kHz
+→ Half-Band FIR → 2 kHz Output
+
+---
+
+## 📁 Repository Structure
 
 Team_15/
-├── 📁 MATLAB Simulink Models/ # Behavioral modeling & noise analysis
-│ ├── FinalModel/dtcrfb3nonideal.slx # Selected 3rd-order CRFB w/ non-idealities
-│ ├── DIGITALFILTERFLOATINGPOINTREFERENCE/
-│ └── MATLABSCRIPTS/EnobvsSamplingrate.m
-├── 📁 RTL Code (Verilog)/ # SystemVerilog RTL + self-contained testbench
-│ ├── filtersynth.v # Top-level FilterTop
-│ ├── decifilter.v # CIC + FIR stages
-│ └── testbench/ # Sine+noise → sigma-delta → CIC
-├── 📁 Synthesis & Layout files/ # DC/ICC2 complete flow
-│ ├── synthesis/ # Netlist, SDC, area/timing/power reports
-│ ├── icc2Scripts/ # 01floorplan.tcl → 06gdsiiout.tcl
-│ ├── GDSIIFile/FilterTop.gds # Final layout database
-│ └── Snapshots/ # PnR images, congestion maps
-├── 📄 Team_15_report.pdf # Technical report (44 pages)
-├── 📄 Team_15.pptx # Presentation slides
-├── 📄 MATLAB_README.pdf # Simulink setup & workflow
-├── 📄 Simulation_environment.pdf # RTL testbench details
-├── 📄 Environment_File.pdf # Toolchain/PDK specs
-└── 📄 readme-1.md # Synthesis/layout README
+├── MATLAB Simulink Models/
+│   ├── FinalModel/
+│   │   └── dtcrfb3nonideal.slx
+│   ├── DIGITALFILTERFLOATINGPOINTREFERENCE/
+│   └── MATLABSCRIPTS/
+│       └── EnobvsSamplingrate.m
+│
+├── RTL Code (Verilog)/
+│   ├── filtersynth.v        # Top-level digital filter
+│   ├── decifilter.v         # CIC + FIR implementation
+│   └── testbench/           # Self-contained verification
+│
+├── Synthesis & Layout files/
+│   ├── synthesis/           # DC scripts and reports
+│   ├── icc2Scripts/         # Floorplan → GDSII scripts
+│   ├── GDSIIFile/
+│   │   └── FilterTop.gds
+│   └── Snapshots/           # PnR & congestion images
+│
+├── Team_15_report.pdf       # 44-page technical report
+├── Team_15.pptx             # Final presentation
+├── MATLAB_README.pdf
+├── Simulation_environment.pdf
+├── Environment_File.pdf
+└── readme-1.md               # Detailed synthesis & PnR README
 
-text
+---
 
 ## 🚀 Quick Start
 
-### 1. MATLAB/Simulink (R2025b required)
-```bash
-# Required toolboxes: Mixed-Signal, DSP, Sigma-Delta, Filter Design
-cd "MATLAB Simulink Models"
+### 1. MATLAB / Simulink (R2025b)
+
+Required Toolboxes:
+
+* DSP System Toolbox
+* Mixed-Signal Blockset
+* Sigma-Delta Toolbox
+* Filter Design Toolbox
+
+Steps:
+
+1. Open MATLAB R2025b
+2. Navigate to MATLAB Simulink Models
+3. Run the following scripts:
+
 run DIGITALFILTERFLOATINGPOINTREFERENCE/Compensationcoefficients.m
 run DIGITALFILTERFLOATINGPOINTREFERENCE/Halfbandcoefficeint.m
-run MATLABSCRIPTS/EnobvsSamplingrate.m  # ~120s runtime, outputs ENOB tables
-SimTime: 120s minimum for ADC-AC SNR measurement[file:4][file:6]
+run MATLABSCRIPTS/EnobvsSamplingrate.m
 
-2. RTL Simulation (Vivado 2023.2)
-bash
-# Self-contained testbench: 440Hz sine + 1/f noise → sigma-delta → CIC
-open_project rtl/
-run_simulation  # ~292k samples, 22ms sim time
-Monitor: adcinput, adclvdspin, adcoutput, adcvalid[file:7]
+Notes:
 
-3. Synthesis & PnR (Synopsys)
-tcl
-# DC Synthesis
-dc_shell -f synthesisScript/run_dc.tcl  # tsl18fs120sclss.lib
+* Minimum simulation time: **120 seconds**
+* Outputs ENOB vs Sampling Rate results
 
-# ICC2 PnR (sequential scripts)
+---
+
+### 2. RTL Simulation (Vivado 2023.2)
+
+Steps:
+
+1. Open Vivado 2023.2
+2. Load the RTL project
+3. Run simulation
+
+Simulation Characteristics:
+
+* Input: 440 Hz sine + 1/f noise
+* Total samples: ~292k
+* Observed signals:
+
+  * adcinput
+  * adclvdspin
+  * adcoutput
+  * adcvalid
+
+---
+
+### 3. Synthesis & Place-and-Route (Synopsys)
+
+#### Logic Synthesis (Design Compiler)
+
+dc_shell -f synthesisScript/run_dc.tcl
+
+* Standard Cell Library: tsl18fs120sclss.lib
+
+#### Physical Design (ICC2)
+
 icc2_shell -f icc2Scripts/01floorplan.tcl
 icc2_shell -f icc2Scripts/02powerplan.tcl
-# ... → 06gdsiiout.tcl → FilterTop.gds
-PDK: SCL180nm (.ndm bundle), PVT: SS/FF corners[file:5][file:6]
+...
+icc2_shell -f icc2Scripts/06gdsiiout.tcl
 
-📊 Key Results
-Metric	Value	Target Met
-ENOB	16.22 bits (0.5ksps)
-16.00 bits (1ksps)
-15.25 bits (2ksps)	✅[file:2]
-Area	20,116 µm² (731 cells)	✅[file:2]
-Utilization	72.22%	✅[file:2]
-Timing	WNS +0.524ns (1MHz)	✅[file:2]
-Congestion	0% overflow (1740 blue bins)	✅[file:2]
-Power	9.67 µW total	✅[file:2]
-ENOB Plot
-ENOB vs Nyquist (PPT Image Picture 33 or Report Table 4)[file:2][file:3]
+* PDK: SCL 180 nm (.ndm bundle)
+* Corners: SS / FF
 
-LayoutCongestion
-GDSII (Snapshots/) & Global Routing Fig.12 (report p.9)[file:2][file:5]
+---
 
-🔬 Technical Highlights
-Modulator Selection
-Rejected: CT (jitter-sensitive, max 11.5 ENOB), Hybrid (complex)
+## 📊 Key Results
 
-Selected: 3rd-order DT-CRFB (jitter-resilient, 16+ ENOB w/ non-idealities)
+ENOB:
 
-Noise Mitigation: Auto-zeroing (30dB 1/f rejection > chopping)[file:2]
+* 17.2 bits @ 0.5 ksps
+* 16.0 bits @ 1 ksps
+* 15.25 bits @ 2 ksps
 
-Decimation Chain
-text
-512kHz bitstream ──CIC(L4,R64)──► 8kHz ──Comp.FIR(63taps)──► 4kHz ──HB.FIR──► 2kHz
-CIC: Hogenauer non-recursive (adders only)
+Area:
 
-FIRs: Parks-McClellan, polyphase, Q-format fixed-point[file:2]
+* 20,116 µm² (731 standard cells)
 
-RTL Verification
-text
-Input: 440Hz cos(1V) + flicker(10mV)
-Modulator: Behavioral 1st-order (RC integrator + LVDS comp)
-Filter: Full CIC → 1143 output samples (~1kHz rate)
-Waveform: Fig.9 (report p.8)[file:2][file:7]
+Utilization:
 
-🛠️ Toolchain & Requirements
-OS: Windows 11 + MobaXterm (Synopsys Linux)
+* 72.22%
 
-MATLAB: R2025b (i7+, 120s+ sims)
+Timing:
 
-Vivado: 2023.2 (SystemVerilog)
+* WNS +0.524 ns @ 1 MHz
 
-Synopsys: DC X-2025.06, ICC2 (SCL180nm PDK)[file:6]
+Routing Congestion:
 
-📖 Documentation
-Technical Report (PDF) - 44 pages, all sims/tables
+* 0% overflow
 
-Presentation (PPTX) - Slides w/ spectra, architectures
+Power:
 
-MATLAB Guide (PDF) - Simulink workflow
+* 9.67 µW total
 
-RTL Testbench (PDF)
+All design targets met successfully.
 
-Synthesis/Layout README[file:5]
+---
+
+## 🔬 Technical Highlights
+
+### Modulator Selection
+
+Rejected Architectures:
+
+* Continuous-Time: jitter sensitive, ENOB ≤ 11.5
+* Hybrid architectures: high complexity
+
+Selected Architecture:
+
+* 3rd-order DT-CRFB
+* Robust against clock jitter
+* ENOB ≥ 16 bits with non-idealities
+
+Noise Reduction:
+
+* Auto-zeroing provides ~30 dB flicker noise suppression
+
+---
+
+### RTL Verification
+
+* Input: 440 Hz cosine (1 V) + flicker noise (10 mV)
+* Modulator: Behavioral model
+* Digital filter output rate: ~1 kHz
+* Total output samples: 1143
+* Results matched MATLAB reference
+
+---
+
+## 🛠️ Toolchain & Environment
+
+* OS: Windows 11 + MobaXterm (Linux environment)
+* MATLAB: R2025b
+* Vivado: 2023.2
+* Synopsys: Design Compiler X-2025.06, ICC2
+* PDK: SCL 180 nm
+
+---
+
+## 📖 Documentation
+
+* Technical Report (PDF) – Complete simulations and analysis
+* Presentation (PPTX) – Architecture and results
+* MATLAB Workflow Guide (PDF)
+* RTL Testbench Guide (PDF)
+* Synthesis & Layout README
+
+---
+
+## 📌 Notes
+
+This repository is intended **strictly for academic and evaluation purposes** as part of the **ISRO VLSI End-Term Program**.
+
+---
