@@ -1,0 +1,61 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : Filter_Top
+Version: X-2025.06
+Date   : Sun Dec  7 18:23:15 2025
+****************************************
+
+
+Library(s) Used:
+
+    tsl18fs120_scl_ss (File: /home/team_15/tsl18fs120_scl_ss.db)
+
+
+Operating Conditions: tsl18fs120_scl_ss   Library: tsl18fs120_scl_ss
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+Filter_Top             35000             tsl18fs120_scl_ss
+
+
+Global Operating Voltage = 1.62 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =   8.4302 uW   (89%)
+  Net Switching Power  =   1.0030 uW   (11%)
+                         ---------
+Total Dynamic Power    =   9.4332 uW  (100%)
+
+Cell Leakage Power     = 240.8920 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  7.6220e-03            0.0000            0.0000        7.6220e-03  (  78.79%)  i
+register       1.7255e-04        1.0196e-04        1.2011e+05        3.9463e-04  (   4.08%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  6.3572e-04        9.0104e-04        1.2078e+05        1.6575e-03  (  17.13%)
+--------------------------------------------------------------------------------------------------
+Total          8.4302e-03 mW     1.0030e-03 mW     2.4089e+05 pW     9.6741e-03 mW
+1

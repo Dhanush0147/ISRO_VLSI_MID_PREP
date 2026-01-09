@@ -1,0 +1,75 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Filter_Top
+Version: X-2025.06
+Date   : Sun Dec  7 18:23:15 2025
+****************************************
+
+Operating Conditions: tsl18fs120_scl_ss   Library: tsl18fs120_scl_ss
+Wire Load Model Mode: top
+
+  Startpoint: addr_hf[1] (input port clocked by clk)
+  Endpoint: hf_filt/pre_in_reg_41_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Filter_Top         35000                 tsl18fs120_scl_ss
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                   100.00     100.00 f
+  addr_hf[1] (in)                          0.00     100.00 f
+  hf_filt/HF_addr[1] (HF_Filter)           0.00     100.00 f
+  hf_filt/U3/ZN (inv0d0)                   0.85     100.85 r
+  hf_filt/U10/ZN (aoim211d1)               0.17     101.02 f
+  hf_filt/U16/ZN (aoi22d1)                 0.47     101.49 r
+  hf_filt/U17/ZN (oai211d1)                0.61     102.10 f
+  hf_filt/U18/ZN (inv0d2)                  1.37     103.47 r
+  hf_filt/U49/ZN (nd02d0)                  0.75     104.22 f
+  hf_filt/U97/ZN (nd02d0)                  0.57     104.79 r
+  hf_filt/U98/ZN (inv0d0)                  0.51     105.30 f
+  hf_filt/U105/Z (aoim22d1)                0.43     105.73 f
+  hf_filt/intadd_1_U15/CO (ad01d1)         0.62     106.35 f
+  hf_filt/intadd_1_U14/S (ad01d1)          0.46     106.81 f
+  hf_filt/U26/ZN (inv0d0)                  0.43     107.23 r
+  hf_filt/U27/ZN (nd02d0)                  0.42     107.66 f
+  hf_filt/intadd_1_U13/CO (ad01d1)         0.64     108.30 f
+  hf_filt/intadd_1_U12/CO (ad01d1)         0.42     108.72 f
+  hf_filt/intadd_1_U11/CO (ad01d1)         0.42     109.13 f
+  hf_filt/intadd_1_U10/CO (ad01d1)         0.42     109.55 f
+  hf_filt/intadd_1_U9/CO (ad01d1)          0.42     109.96 f
+  hf_filt/intadd_1_U8/CO (ad01d1)          0.42     110.38 f
+  hf_filt/intadd_1_U7/CO (ad01d1)          0.42     110.80 f
+  hf_filt/intadd_1_U6/CO (ad01d1)          0.42     111.21 f
+  hf_filt/intadd_1_U5/CO (ad01d1)          0.42     111.63 f
+  hf_filt/intadd_1_U4/CO (ad01d1)          0.42     112.04 f
+  hf_filt/intadd_1_U3/CO (ad01d1)          0.42     112.46 f
+  hf_filt/intadd_1_U2/CO (ad01d1)          0.38     112.84 f
+  hf_filt/U110/Z (xr03d1)                  0.51     113.35 r
+  hf_filt/pre_in_reg_41_/D (dfcrq1)        0.00     113.35 r
+  data arrival time                                 113.35
+
+  clock clk (rise edge)                 1000.00    1000.00
+  clock network delay (ideal)              0.00    1000.00
+  clock uncertainty                      -20.00     980.00
+  hf_filt/pre_in_reg_41_/CP (dfcrq1)       0.00     980.00 r
+  library setup time                      -0.16     979.84
+  data required time                                979.84
+  -----------------------------------------------------------
+  data required time                                979.84
+  data arrival time                                -113.35
+  -----------------------------------------------------------
+  slack (MET)                                       866.48
+
+
+1

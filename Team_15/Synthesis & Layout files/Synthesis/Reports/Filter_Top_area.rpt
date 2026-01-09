@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : Filter_Top
+Version: X-2025.06
+Date   : Sun Dec  7 18:23:15 2025
+****************************************
+
+Library(s) Used:
+
+    tsl18fs120_scl_ss (File: /home/team_15/tsl18fs120_scl_ss.db)
+
+Number of ports:                          112
+Number of nets:                           810
+Number of cells:                          731
+Number of combinational cells:            577
+Number of sequential cells:               151
+Number of macros/black boxes:               0
+Number of buf/inv:                        150
+Number of references:                      28
+
+Combinational area:              10473.890063
+Buf/Inv area:                      990.689996
+Noncombinational area:            9097.050255
+Macro/Black Box area:                0.000000
+Net Interconnect area:             545.190814
+
+Total cell area:                 19570.940318
+Total area:                      20116.131132
+1

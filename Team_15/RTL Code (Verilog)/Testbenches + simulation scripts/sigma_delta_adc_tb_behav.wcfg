@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sigma_delta_adc_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sigma_delta_adc_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="1,651.228950 us"></ZoomEndTime>
+      <Cursor1Time time="5,001.000000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="306"></NameColumnWidth>
+      <ValueColumnWidth column_width="173"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="35" />
+   <wvobject fp_name="/sigma_delta_adc_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/adc_input" type="other">
+      <obj_property name="ElementShortName">adc_input</obj_property>
+      <obj_property name="ObjectShortName">adc_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/adc_lvds_pin" type="logic">
+      <obj_property name="ElementShortName">adc_lvds_pin</obj_property>
+      <obj_property name="ObjectShortName">adc_lvds_pin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/adc_fb_pin" type="logic">
+      <obj_property name="ElementShortName">adc_fb_pin</obj_property>
+      <obj_property name="ObjectShortName">adc_fb_pin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/lvds_pin_p" type="other">
+      <obj_property name="ElementShortName">lvds_pin_p</obj_property>
+      <obj_property name="ObjectShortName">lvds_pin_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/lvds_pin_n" type="other">
+      <obj_property name="ElementShortName">lvds_pin_n</obj_property>
+      <obj_property name="ObjectShortName">lvds_pin_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/increase" type="other">
+      <obj_property name="ElementShortName">increase</obj_property>
+      <obj_property name="ObjectShortName">increase</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/decrease" type="other">
+      <obj_property name="ElementShortName">decrease</obj_property>
+      <obj_property name="ObjectShortName">decrease</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/adc_output" type="array">
+      <obj_property name="ElementShortName">adc_output[19:0]</obj_property>
+      <obj_property name="ObjectShortName">adc_output[19:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/adc_valid" type="logic">
+      <obj_property name="ElementShortName">adc_valid</obj_property>
+      <obj_property name="ObjectShortName">adc_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/sim_done" type="logic">
+      <obj_property name="ElementShortName">sim_done</obj_property>
+      <obj_property name="ObjectShortName">sim_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/sample_count" type="array">
+      <obj_property name="ElementShortName">sample_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/output_count" type="array">
+      <obj_property name="ElementShortName">output_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/expected_outputs" type="array">
+      <obj_property name="ElementShortName">expected_outputs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_outputs[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/noise_prev" type="other">
+      <obj_property name="ElementShortName">noise_prev</obj_property>
+      <obj_property name="ObjectShortName">noise_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/OVERSAMPLE_RATE" type="array">
+      <obj_property name="ElementShortName">OVERSAMPLE_RATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OVERSAMPLE_RATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/ADC_BITLEN" type="array">
+      <obj_property name="ElementShortName">ADC_BITLEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_BITLEN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/USE_FIR_COMP" type="logic">
+      <obj_property name="ElementShortName">USE_FIR_COMP</obj_property>
+      <obj_property name="ObjectShortName">USE_FIR_COMP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/FIR_COMP_ALPHA_8" type="array">
+      <obj_property name="ElementShortName">FIR_COMP_ALPHA_8[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FIR_COMP_ALPHA_8[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/USE_DC" type="array">
+      <obj_property name="ElementShortName">USE_DC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">USE_DC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/OUTPUT_DIGITAL" type="logic">
+      <obj_property name="ElementShortName">OUTPUT_DIGITAL</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/DC_VALUE" type="other">
+      <obj_property name="ElementShortName">DC_VALUE</obj_property>
+      <obj_property name="ObjectShortName">DC_VALUE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/DUMP_VCD" type="array">
+      <obj_property name="ElementShortName">DUMP_VCD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DUMP_VCD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/BCLK" type="array">
+      <obj_property name="ElementShortName">BCLK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BCLK[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/NUM_CYCLES" type="array">
+      <obj_property name="ElementShortName">NUM_CYCLES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NUM_CYCLES[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/VCC" type="other">
+      <obj_property name="ElementShortName">VCC</obj_property>
+      <obj_property name="ObjectShortName">VCC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/FREQUENCY" type="other">
+      <obj_property name="ElementShortName">FREQUENCY</obj_property>
+      <obj_property name="ObjectShortName">FREQUENCY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/AMPLITUDE" type="other">
+      <obj_property name="ElementShortName">AMPLITUDE</obj_property>
+      <obj_property name="ObjectShortName">AMPLITUDE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/OFFSET" type="other">
+      <obj_property name="ElementShortName">OFFSET</obj_property>
+      <obj_property name="ObjectShortName">OFFSET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/FLICKER_AMP" type="other">
+      <obj_property name="ElementShortName">FLICKER_AMP</obj_property>
+      <obj_property name="ObjectShortName">FLICKER_AMP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/CLK_NS" type="array">
+      <obj_property name="ElementShortName">CLK_NS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_NS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/NUM_SAMPLES" type="array">
+      <obj_property name="ElementShortName">NUM_SAMPLES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NUM_SAMPLES[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/CAP_FUDGE" type="array">
+      <obj_property name="ElementShortName">CAP_FUDGE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CAP_FUDGE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sigma_delta_adc_tb/PRNG_SEED" type="array">
+      <obj_property name="ElementShortName">PRNG_SEED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRNG_SEED[31:0]</obj_property>
+   </wvobject>
+</wave_config>
